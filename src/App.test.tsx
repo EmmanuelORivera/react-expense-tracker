@@ -12,4 +12,19 @@ describe('App', () => {
     const header = screen.getByTestId('header')
     expect(header).toBeInTheDocument()
   })
+
+  it('should render Balance component', () => {
+    render(<App />)
+    const balance = screen.getByTestId('balance')
+    expect(balance).toBeInTheDocument()
+  })
+
+  it('renders app compnent with container div', () => {
+    render(<App />)
+
+    const containerDiv = screen.getByTestId('app-container')
+
+    expect(containerDiv).toBeInTheDocument()
+    expect(containerDiv).toHaveClass('container')
+  })
 })
