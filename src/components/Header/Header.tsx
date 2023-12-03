@@ -14,7 +14,7 @@ const Header = () => {
   ]
   return (
     <header data-testid="header">
-      <ul>
+      <ul className="d-flex list-unstyled h5 gap-5 text-white py-3 justify-content-around">
         {months.map((month, index) => (
           <li key={index}>{month}</li>
         ))}
