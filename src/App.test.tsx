@@ -27,4 +27,10 @@ describe('App', () => {
     expect(containerDiv).toBeInTheDocument()
     expect(containerDiv).toHaveClass('container')
   })
+
+  it('should render TransactionsList component', () => {
+    render(<App />)
+    const transactionsList = screen.getByTestId('transactions-list')
+    expect(transactionsList).toBeInTheDocument()
+  })
 })

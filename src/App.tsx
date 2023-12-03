@@ -1,5 +1,6 @@
 import Balance from './components/Balance/Balance'
 import Header from './components/Header/Header'
+import TransactionsList from './components/TransactionsList/TransactionsList'
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <div data-testid="app-container" className="container">
         <Balance />
+        <TransactionsList />
       </div>
     </>
   )
