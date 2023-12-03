@@ -8,3 +8,37 @@
 header {
   background-color: #6582f8;
 }
+/* Balance */
+.balance {
+  border: 1px solid #eef0f4;
+  border-radius: 16px;
+  box-shadow: 0px 8px 16px -4px #eef0f4;
+}
+.balance__total {
+  color: #697df0 !important;
+}
+
+.balance__income {
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  color: #69c876;
+}
+.balance__expenses {
+  width: 100%;
+  color: #de696e;
+}
+
+/* Arrow */
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+@media (min-width: 576px) {
+  .balance__income {
+    border-bottom: none;
+    border-right: 1px solid #e6e6e6;
+  }
+}
