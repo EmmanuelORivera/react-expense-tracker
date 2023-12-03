@@ -7,9 +7,9 @@ describe('App', () => {
     render(<App />)
     screen.debug()
   })
-  it('should render a header with Hello world message', () => {
+  it('should render Header component', () => {
     render(<App />)
-    const header = screen.getByText(/hello world!/i)
+    const header = screen.getByTestId('header')
     expect(header).toBeInTheDocument()
   })
 })
