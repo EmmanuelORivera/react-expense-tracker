@@ -24,7 +24,7 @@ const TransactionForm = () => {
 
     const formattedDate = transactionsDate.formatTransactionKey(new Date())
     setTransactions((prevTransactions) => {
-      const updatedTransactions = { ...prevTransactions }
+      let updatedTransactions = { ...prevTransactions }
       const newTransaction: ITransaction = {
         amount: Number(amount),
         text,
@@ -35,7 +35,10 @@ const TransactionForm = () => {
       if (updatedTransactions[formattedDate]) {
         updatedTransactions[formattedDate].push(newTransaction)
       } else {
-        updatedTransactions[formattedDate] = [newTransaction]
+        updatedTransactions = {
+          [formattedDate]: [newTransaction],
+          ...updatedTransactions,
+        }
       }
 
       return updatedTransactions
