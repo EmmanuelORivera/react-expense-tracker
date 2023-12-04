@@ -19,9 +19,7 @@ describe('App', () => {
       </MockProviders>
     )
   })
-  it('should render the component without problems', () => {
-    screen.debug()
-  })
+  it('should render the component without problems', () => {})
   it('should render Header component', () => {
     const header = screen.getByTestId('header')
     expect(header).toBeInTheDocument()

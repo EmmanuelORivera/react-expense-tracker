@@ -1,9 +1,26 @@
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import TransactionGroup from './TransactionGroup'
 import { ITransaction } from '../../interfaces/ITransaction'
+import { TransactionsProvider } from '../../contexts/TransactionsContext'
+import { ModalProvider } from '../../contexts/ModalContext'
+
+const MockProviders = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <TransactionsProvider>
+      <ModalProvider>{children}</ModalProvider>
+    </TransactionsProvider>
+  )
+}
 
 describe('TransactionGroup', () => {
+  beforeEach(() => {
+    render(
+      <MockProviders>
+        <TransactionGroup date={date} transactionList={transactionList} />
+      </MockProviders>
+    )
+  })
   const date = '2023/12/02'
   const transactionList: ITransaction[] = [
     {
@@ -19,7 +36,5 @@ describe('TransactionGroup', () => {
       date: new Date('2023/12/02'),
     },
   ]
-  it('should render the component without a problem', () => {
-    render(<TransactionGroup date={date} transactionList={transactionList} />)
-  })
+  it('should render the component without a problem', () => {})
 })
