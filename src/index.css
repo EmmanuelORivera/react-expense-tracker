@@ -7,6 +7,7 @@
 /* Header */
 header {
   background-color: #6582f8;
+  overflow-x: hidden;
 }
 /* Balance */
 .balance {
@@ -35,6 +36,15 @@ header {
   display: inline-block;
   padding: 3px;
   transform: rotate(45deg) translate(-50%, -50%);
+}
+
+/* TransactionGroup */
+
+.transaction-group__list {
+  border: 1px solid #eef0f4;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px -4px #eef0f4;
+  margin: 0.5rem 0;
 }
 @media (min-width: 576px) {
   .balance__income {
