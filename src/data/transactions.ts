@@ -11,7 +11,7 @@ const transactions: ITransaction[] = [
   { id: '8', date: new Date('2023/10/29'), text: 'Utilities', amount: 150.0 },
   { id: '9', date: new Date('2023/11/02'), text: 'Earnings', amount: 500.0 },
   { id: '10', date: new Date('2023/10/27'), text: 'Investment', amount: 300.0 },
-  { id: '11', date: new Date('2023/12/03'), text: 'Tacos', amount: -10.5 },
+  { id: '11', date: new Date('2023/12/03'), text: 'Tacos', amount: -10.0 },
 ]
 
 export default transactions
