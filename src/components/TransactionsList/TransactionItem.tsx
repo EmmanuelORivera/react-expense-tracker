@@ -1,4 +1,5 @@
 import { ITransaction } from '../../interfaces/ITransaction'
+import Arrow from '../Arrow/Arrow'
 import Circle from '../Circle/Circle'
 
 interface ITransactionItemProps {
@@ -34,6 +35,7 @@ const TransactionItem = ({ transaction }: ITransactionItemProps) => {
       </div>
       <span className="h3 fw-bold" style={{ color: amountColor }}>
         {amountText}
+        <Arrow color="black" className="ms-4" />
       </span>
     </li>
   )

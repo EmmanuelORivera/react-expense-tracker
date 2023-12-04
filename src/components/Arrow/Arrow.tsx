@@ -1,12 +1,13 @@
 interface ArrowProps {
   color?: string
+  className?: string
 }
 
-const Arrow = ({ color = '#bbb' }: ArrowProps) => {
+const Arrow = ({ color = '#bbb', className = '' }: ArrowProps) => {
   return (
     <div
       data-testid="arrow"
-      className="arrow"
+      className={`${className} arrow`}
       style={{ borderColor: color }}
     ></div>
   )
