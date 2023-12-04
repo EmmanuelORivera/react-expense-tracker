@@ -1,5 +1,7 @@
+import { useTransactionsContext } from '../../contexts/TransactionsContext'
 import { ITransaction } from '../../interfaces/ITransaction'
 import Arrow from '../Arrow/Arrow'
+import Button from '../Button/Button'
 import Circle from '../Circle/Circle'
 
 interface ITransactionItemProps {
@@ -17,6 +19,8 @@ const getAmountColor = (amount: number) => {
 }
 
 const TransactionItem = ({ transaction }: ITransactionItemProps) => {
+  const { removeTransaction } = useTransactionsContext()
+
   const amountColor = getAmountColor(transaction.amount)
   const amountText =
     transaction.amount > 0
@@ -26,9 +30,16 @@ const TransactionItem = ({ transaction }: ITransactionItemProps) => {
   return (
     <li
       data-testid="transaction-item"
+      style={{ position: 'relative' }}
       className="transaction-group__list p-3 d-flex justify-content-between align-items-center"
       key={transaction.id}
     >
+      <Button
+        handleClick={() => removeTransaction(transaction.id)}
+        className="delete-btn"
+      >
+        x
+      </Button>
       <div className="d-flex justify-content-between align-items-center gap-2">
         <Circle />
         <span>{transaction.text}</span>

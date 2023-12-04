@@ -11,6 +11,7 @@ interface TransactionsContextProps {
   total: number
   totalExpenses: number
   totalIncomes: number
+  removeTransaction: (transactionId: string) => void
 }
 
 interface TransactionsProviderProps {
@@ -64,6 +65,20 @@ export const TransactionsProvider = ({
     setTotalIncomes(newTotalIncomes)
   }, [transactions])
 
+  const removeTransaction = (transactionId: string) => {
+    setTransactions((prevTransactions) => {
+      const updatedTransactions = { ...prevTransactions }
+
+      for (const date in updatedTransactions) {
+        updatedTransactions[date] = updatedTransactions[date].filter(
+          (transaction) => transaction.id !== transactionId
+        )
+      }
+
+      return updatedTransactions
+    })
+  }
+
   return (
     <TransactionsContext.Provider
       value={{
@@ -72,6 +87,7 @@ export const TransactionsProvider = ({
         total,
         totalExpenses,
         totalIncomes,
+        removeTransaction,
       }}
     >
       {children}
