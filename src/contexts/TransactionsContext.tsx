@@ -8,6 +8,9 @@ interface TransactionsContextProps {
   setTransactions: React.Dispatch<
     React.SetStateAction<Record<string, ITransaction[]>>
   >
+  total: number
+  totalExpenses: number
+  totalIncomes: number
 }
 
 interface TransactionsProviderProps {
@@ -25,14 +28,52 @@ export const TransactionsProvider = ({
     Record<string, ITransaction[]>
   >({})
 
+  const [total, setTotal] = useState(0)
+  const [totalExpenses, setTotalExpenses] = useState(0)
+  const [totalIncomes, setTotalIncomes] = useState(0)
+
   useEffect(() => {
     const groupedTransactions =
       transactionsDate.groupTransactions(transactionsData)
     setTransactions(groupedTransactions)
   }, [])
 
+  useEffect(() => {
+    let newTotal = 0
+    let newTotalExpenses = 0
+    let newTotalIncomes = 0
+
+    for (const date in transactions) {
+      const transactionList = transactions[date]
+
+      transactionList.forEach((transaction) => {
+        const amount = transaction.amount
+
+        newTotal += amount
+
+        if (amount < 0) {
+          newTotalExpenses += amount
+        } else {
+          newTotalIncomes += amount
+        }
+      })
+    }
+
+    setTotal(newTotal)
+    setTotalExpenses(newTotalExpenses)
+    setTotalIncomes(newTotalIncomes)
+  }, [transactions])
+
   return (
-    <TransactionsContext.Provider value={{ transactions, setTransactions }}>
+    <TransactionsContext.Provider
+      value={{
+        transactions,
+        setTransactions,
+        total,
+        totalExpenses,
+        totalIncomes,
+      }}
+    >
       {children}
     </TransactionsContext.Provider>
   )
