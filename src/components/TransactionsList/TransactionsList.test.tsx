@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react'
-import { describe, it, expect, beforeAll } from 'vitest'
+import { render } from '@testing-library/react'
+import { describe, it, beforeAll } from 'vitest'
 import TransactionsList from './TransactionsList'
 import { TransactionsProvider } from '../../contexts/TransactionsContext'
 import { ModalProvider } from '../../contexts/ModalContext'

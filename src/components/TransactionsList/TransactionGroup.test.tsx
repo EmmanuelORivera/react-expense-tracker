@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react'
-import { describe, it, expect, beforeEach } from 'vitest'
+import { render } from '@testing-library/react'
+import { describe, it, beforeEach } from 'vitest'
 import TransactionGroup from './TransactionGroup'
 import { ITransaction } from '../../interfaces/ITransaction'
 import { TransactionsProvider } from '../../contexts/TransactionsContext'
