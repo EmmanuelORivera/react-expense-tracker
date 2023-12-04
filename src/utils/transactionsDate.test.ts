@@ -8,20 +8,20 @@ describe('transactionsDate', () => {
 
     expect(Object.keys(groupedTransactions)).toHaveLength(9)
     expect(groupedTransactions['2023/10/31']).toHaveLength(1)
-    expect(groupedTransactions['2023/12/01']).toHaveLength(1)
+    expect(groupedTransactions['2023/12/1']).toHaveLength(1)
     expect(groupedTransactions['2023/10/25']).toHaveLength(1)
-    expect(groupedTransactions['2023/11/02']).toHaveLength(3)
+    expect(groupedTransactions['2023/11/2']).toHaveLength(3)
     expect(groupedTransactions['2023/10/30']).toHaveLength(1)
     expect(groupedTransactions['2023/10/28']).toHaveLength(1)
     expect(groupedTransactions['2023/10/29']).toHaveLength(1)
-    expect(groupedTransactions['2023/12/03']).toHaveLength(1)
+    expect(groupedTransactions['2023/12/3']).toHaveLength(1)
   })
 
   it('should format transaction key', () => {
-    const date = new Date('2023-12-01')
+    const date = new Date('2023-12-03T12:34:56')
     const formattedKey = transactionsDate.formatTransactionKey(date)
-
-    expect(formattedKey).toEqual('2023/12/01')
+    console.log({ date })
+    expect(formattedKey).toEqual('2023/12/3')
   })
 
   it('should sort transactions by date', () => {

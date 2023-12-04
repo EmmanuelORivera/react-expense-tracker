@@ -1,7 +1,7 @@
 import { ITransaction } from '../interfaces/ITransaction'
 
 const formatTransactionKey = (date: Date): string =>
-  date.toISOString().split('T')[0].split('-').join('/')
+  date.toLocaleString().split(',')[0].split('/').reverse().join('/')
 
 const groupTransactions = (
   transactions: ITransaction[]
