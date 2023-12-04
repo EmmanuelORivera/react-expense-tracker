@@ -19,7 +19,6 @@ const TransactionForm = () => {
       toast.error('Error en Concepto o Monto favor de revisar los campos')
       return
     }
-    console.log('submit')
     toggleModal()
     toast.success('Se ha agregado un nuevo movimiento a la lista')
 

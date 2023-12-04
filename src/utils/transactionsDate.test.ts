@@ -20,7 +20,6 @@ describe('transactionsDate', () => {
   it('should format transaction key', () => {
     const date = new Date('2023-12-03T12:34:56')
     const formattedKey = transactionsDate.formatTransactionKey(date)
-    console.log({ date })
     expect(formattedKey).toEqual('2023/12/3')
   })
 
