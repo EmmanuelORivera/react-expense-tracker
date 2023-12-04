@@ -12,6 +12,7 @@ const TransactionGroup = ({
   transactionList,
 }: ITransactionGroupProps) => {
   const currentDate = new Date()
+  if (transactionList.length === 0) return
   return (
     <div key={date} className="transaction-group">
       <p className="text-capitalize fw-bold m-0">{`${transactionsDate.formatDateMessage(
