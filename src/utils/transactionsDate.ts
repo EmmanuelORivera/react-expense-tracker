@@ -5,7 +5,7 @@ const formatTransactionKey = (date: Date): string =>
 
 const groupTransactions = (
   transactions: ITransaction[]
-): Record<string, ITransaction[] | {}> => {
+): Record<string, ITransaction[]> => {
   const sortedTransactions = sortTransactionsByDate(transactions)
 
   return sortedTransactions.reduce((result, transaction) => {
