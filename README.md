@@ -1,7 +1,6 @@
 # React + TypeScript + Vite
 ## Live Demo
-Visit this page at [https://open-table-nextjs.vercel.app/](https://react-expense-tracker-95.netlify.app/)
-
+Visit this page at https://react-expense-tracker-95.netlify.app/
 ### Installation
 1. Clone the repository.
 2. Navigate to the project direcotry.
